@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сравнительная таблица праздников 2026</title>
+    <style>
+        :root {
+          --bg-color: #0f172a;
+          --card-bg-nested-color: #150f2a;
+          --border-color: #334155;
+          --text-primary: #cbd5e1;
+          --text-secondary: #64748b;
+          --accent-color: #34d399;
+          /* === ИЗМЕНЕНИЕ: Добавлены переменные для условных цветов === */
+          --danger-color-text: #FF8888;
+          --success-color-text: #34d399; /* Emerald 400 */
+          /* ========================================================== */
+          --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          --radius-main: 12px;
+          --radius-small: 6px;
+          --space-unit: 8px;
+        }
+
+        /* Базовые стили */
+        body {
+          font-family: var(--font-main);
+          background-color: var(--bg-color);
+          color: var(--text-primary);
+          margin: 0;
+          padding: calc(var(--space-unit) * 3);
+          font-size: 14px;
+          line-height: 1.5;
+        }
+
+        .container {
+          max-width: 1280px;
+          margin-inline: auto;
+        }
+        
+        .table-wrapper {
+          overflow-x: auto; max-height: 90vh; border-radius: var(--radius-small);
+        }
+        .table-wrapper:focus { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+
+        .holidays-table {
+          width: 100%; border-collapse: collapse; text-align: center;
+          background-color: var(--card-bg-nested-color);
+          min-width: 900px;
+        }
+
+        .holidays-table th, .holidays-table td {
+          border: 1px solid var(--border-color);
+          padding: var(--space-unit) calc(var(--space-unit) * 1.5);
+          vertical-align: middle;
+        }
+
+        .holidays-table tbody tr:nth-child(even) {
+            background-color: var(--bg-color);
+        }
+
+        .holidays-table th { font-weight: 600; color: var(--text-primary); }
+        
+        .holidays-table tbody tr:first-child th {
+          background-color: var(--card-bg-nested-color);
+          color: var(--accent-color);
+          text-transform: uppercase; font-size: 1em; letter-spacing: 0.05em;
+          border-bottom: 2px solid var(--border-color);
+        }
+        
+        .holidays-table td:nth-child(4) { text-align: left; }
+        
+        .holidays-table tbody tr:last-child th,
+        .holidays-table tbody tr:last-child td {
+          padding-top: calc(var(--space-unit) * 1.5);
+          padding-bottom: calc(var(--space-unit) * 1.5);
+        }
+
+        .holidays-table tbody tr:last-child th { 
+            font-size: 1em;
+            color: #FFEEDD; 
+        }
+        
+        .holidays-table tbody tr:last-child td {
+          font-weight: bold;
+          font-size: 1.4em;
+          color: #FFEEDD;
+          padding: 0; 
+        }
+        
+        .footer-cell-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: calc(var(--space-unit) * 1.5) calc(var(--space-unit) * 1.5);
+        }
+        
+        .holidays-table th:nth-child(1), .holidays-table td:nth-child(1),
+        .holidays-table th:nth-child(2), .holidays-table td:nth-child(2) {
+            width: 1%; white-space: nowrap;
+        }
+
+        .holidays-table td:nth-child(1) {
+            color: #FFEEDD;
+        }
+
+        .holidays-table th:nth-child(n+6), .holidays-table td:nth-child(n+6) {
+            min-width: 32px; width: 32px;
+        }
+
+        .holiday-name {
+            font-weight: bold;
+        }
+
+        .tooltip-trigger { cursor: help; position: relative; z-index: 1; }
+        .tooltip-trigger sup { font-size: 0.8em; }
+        .tooltip-content {
+            visibility: hidden; opacity: 0;
+            transition: opacity 0.2s, visibility 0.2s;
+            position: absolute; bottom: 110%; left: 50%;
+            transform: translateX(-50%); z-index: 10;
+            width: 250px; padding: var(--space-unit);
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-small);
+            font-size: 0.9em; font-weight: 400; line-height: 1.4;
+            color: var(--text-primary); text-align: left;
+            pointer-events: none;
+        }
+        .tooltip-trigger:hover .tooltip-content { visibility: visible; opacity: 1; }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="table-wrapper" tabindex="0">
+            <table class="holidays-table">
+                <tbody>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Day</th>
+                        <th scope="col">CW</th>
+                        <th scope="col">Holiday</th>
+                        <th scope="col">Count</th>
+                        <th scope="col">PL</th>
+                        <th scope="col">DE</th>
+                        <th scope="col">CY</th>
+                        <th scope="col">UA</th>
+                        <th scope="col">BY</th>
+                        <th scope="col">RS</th>
+                        <th scope="col">GE</th>
+                        <th scope="col">RU</th>
+                        <th scope="col">AZ</th>
+                        <th scope="col">KZ</th>
+                        <th scope="col">AM</th>
+                    </tr>
+                    <tr>
+                        <td>01 Jan</td>
+                        <td>Thu</td>
+                        <td>CW01</td>
+                        <td>
+                            <span class="holiday-name">New Year’s Day</span> <span class="tooltip-trigger"><sup>ℹ️</sup><span class="tooltip-content">Celebrates the first day of the Gregorian calendar. A global public holiday.</span></span>
+                        </td>
+                        <td>11</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>02 Jan</td>
+                        <td>Fri</td>
+                        <td>CW01</td>
+                        <td>
+                            <span class="holiday-name">New Year’s Holiday</span> <span class="tooltip-trigger"><sup>ℹ️</sup><span class="tooltip-content">An additional day off to extend the New Year's celebrations and recovery.</span></span>
+                        </td>
+                        <td>6</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>07 Jan</td>
+                        <td>Wed</td>
+                        <td>CW02</td>
+                        <td>
+                            <span class="holiday-name">Orthodox Christmas Day</span> <span class="tooltip-trigger"><sup>ℹ️</sup><span class="tooltip-content">Commemorates the birth of Jesus, celebrated by Orthodox Christians on the Julian calendar.</span></span>
+                        </td>
+                        <td>6</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>08 Mar</td>
+                        <td>Sun</td>
+                        <td>CW10</td>
+                        <td>
+                             <span class="holiday-name">Women's Day</span> <span class="tooltip-trigger"><sup>ℹ️</sup><span class="tooltip-content">A global day celebrating the social, economic, and cultural achievements of women.</span></span>
+                        </td>
+                        <td>7</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>06 Apr</td>
+                        <td>Mon</td>
+                        <td>CW15</td>
+                        <td>
+                            <span class="holiday-name">Easter Monday (Catholic)</span> <span class="tooltip-trigger"><sup>ℹ️</sup><span class="tooltip-content">The day after Easter Sunday, observed as a holiday in many Christian countries.</span></span>
+                        </td>
+                        <td>2</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>13 Apr</td>
+                        <td>Mon</td>
+                        <td>CW16</td>
+                        <td>
+                            <span class="holiday-name">Easter Monday (Orthodox)</span> <span class="tooltip-trigger"><sup>ℹ️</sup><span class="tooltip-content">Also known as Bright Monday. The day after Orthodox Easter Sunday, continuing celebrations.</span></span>
+                        </td>
+                        <td>4</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>01 May</td>
+                        <td>Fri</td>
+                        <td>CW18</td>
+                        <td>
+                            <span class="holiday-name">Labour Day</span> <span class="tooltip-trigger"><sup>ℹ️</sup><span class="tooltip-content">International Workers' Day. Celebrates labourers and the working classes.</span></span>
+                        </td>
+                        <td>10</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                     <tr>
+                        <td>15 Aug</td>
+                        <td>Sat</td>
+                        <td>CW33</td>
+                        <td>
+                            <span class="holiday-name">Assumption of Mary</span> <span class="tooltip-trigger"><sup>ℹ️</sup><span class="tooltip-content">Christian feast day commemorating the bodily taking up of the Virgin Mary into Heaven.</span></span>
+                        </td>
+                        <td>4</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>25 Dec</td>
+                        <td>Fri</td>
+                        <td>CW52</td>
+                        <td>
+                            <span class="holiday-name">Christmas Day</span> <span class="tooltip-trigger"><sup>ℹ️</sup><span class="tooltip-content">Annual festival commemorating the birth of Jesus Christ, observed on December 25.</span></span>
+                        </td>
+                        <td>5</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                     <tr>
+                        <td>31 Dec</td>
+                        <td>Thu</td>
+                        <td>CW53</td>
+                        <td>
+                            <span class="holiday-name">New Year's Eve</span> <span class="tooltip-trigger"><sup>ℹ️</sup><span class="tooltip-content">The last day of the year in the Gregorian calendar, a day of celebration.</span></span>
+                        </td>
+                        <td>3</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" colspan="4">Total Holidays (58) / Average Country Holidays (5)</th>
+                        <td><div class="footer-cell-content">58</div></td>
+                        <td><div class="footer-cell-content">5</div></td>
+                        <td><div class="footer-cell-content">5</div></td>
+                        <td><div class="footer-cell-content">5</div></td>
+                        <td><div class="footer-cell-content">5</div></td>
+                        <td><div class="footer-cell-content">8</div></td>
+                        <td><div class="footer-cell-content">4</div></td>
+                        <td><div class="footer-cell-content">6</div></td>
+                        <td><div class="footer-cell-content">6</div></td>
+                        <td><div class="footer-cell-content">4</div></td>
+                        <td><div class="footer-cell-content">5</div></td>
+                        <td><div class="footer-cell-content">5</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- === ИЗМЕНЕНИЕ: Добавлен блок JavaScript для условной стилизации === -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Выбираем все ячейки с классом .footer-cell-content в последней строке таблицы
+            const footerCells = document.querySelectorAll('.holidays-table tbody tr:last-child .footer-cell-content');
+
+            footerCells.forEach(cell => {
+                // Получаем текстовое содержимое и преобразуем его в целое число
+                const value = parseInt(cell.textContent, 10);
+
+                // Проверяем, является ли значение числом, чтобы избежать ошибок
+                if (isNaN(value)) {
+                    return; // Пропускаем ячейки без чисел
+                }
+
+                // Применяем стили на основе значения
+                if (value < 5) {
+                    cell.style.color = 'var(--danger-color-text)';
+                } else if (value > 5) {
+                    cell.style.color = 'var(--success-color-text)';
+                } else {
+                    // Для чисел, равных 5, мы сбрасываем цвет на исходный (унаследованный).
+                    // Это гарантирует, что цвет текста будет стандартным, а не #FFEEDD
+                    cell.style.color = 'var(--text-primary)';
+                }
+            });
+        });
+    </script>
+    <!-- ==================================================================== -->
+
+</body>
+</html>
