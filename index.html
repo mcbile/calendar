@@ -101,7 +101,15 @@
             { date: '25 Dec', day: 'Fri', cw: 'CW52', holidayName: 'Christmas Day (Catholic)', countries: { PL: true, DE: true, CY: true, UA: true, BY: true, RS: false, GE: false, RU: false, AZ: false, KZ: false, AM: false } },
             { date: '31 Dec', day: 'Thu', cw: 'CW53', holidayName: 'New Year\'s Eve', countries: { PL: false, DE: false, CY: false, UA: false, BY: false, RS: false, GE: true, RU: true, AZ: false, KZ: false, AM: true } },
         ];
-        const countryCodes = ['PL', 'DE', 'CY', 'UA', 'BY', 'RS', 'GE', 'RU', 'AZ', 'KZ', 'AM'];
+        
+        // --- START OF MODIFICATION ---
+        const countryCodes = ['DE', 'PL', 'CY', 'UA', 'BY', 'AZ', 'RS', 'AM', 'KZ', 'RU', 'GE'];
+        // --- END OF MODIFICATION ---
+
+        const countryFlags = {
+            PL: '🇵🇱', DE: '🇩🇪', CY: '🇨🇾', UA: '🇺🇦', BY: '🇧🇾',
+            RS: '🇷🇸', GE: '🇬🇪', RU: '🇷🇺', AZ: '🇦🇿', KZ: '🇰🇿', AM: '🇦🇲'
+        };
 
         document.addEventListener('DOMContentLoaded', () => {
             const D = document;
@@ -116,8 +124,12 @@
             const render = () => {
                 // --- RENDER HEADER ---
                 let headerHtml = '<tr>';
-                ['Date', 'Day', 'CW', 'Holiday', 'Count', ...countryCodes].forEach(col => {
-                    headerHtml += `<th scope="col" data-column-id="${col.toLowerCase()}">${col}</th>`;
+                ['2026', 'Day', 'CW', 'Holiday', 'Count', ...countryCodes].forEach(col => {
+                    let cellContent = col;
+                    if (countryFlags[col]) {
+                        cellContent = `${col}<br>${countryFlags[col]}`;
+                    }
+                    headerHtml += `<th scope="col" data-column-id="${col.toLowerCase()}">${cellContent}</th>`;
                 });
                 headerHtml += '</tr>';
                 tableHeader.innerHTML = headerHtml;
