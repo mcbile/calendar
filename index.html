@@ -91,15 +91,15 @@
     <script>
     (() => {
         const holidayData = [
-            { date: '01 Jan', day: 'Thu', cw: 'CW01', holidayName: 'New Year’s Day', countries: { PL: true, DE: true, CY: true, UA: true, BY: true, RS: true, GE: true, RU: true, AZ: true, KZ: true, AM: true } },
-            { date: '02 Jan', day: 'Fri', cw: 'CW01', holidayName: 'New Year’s Holiday', countries: { PL: false, DE: false, CY: false, UA: false, BY: true, RS: false, GE: true, RU: true, AZ: true, KZ: true, AM: true } },
-            { date: '07 Jan', day: 'Wed', cw: 'CW02', holidayName: 'Christmas Day (Orthodox)', countries: { PL: false, DE: false, CY: false, UA: false, BY: true, RS: true, GE: true, RU: true, AZ: false, KZ: true, AM: false } }, // CORRECTED
-            { date: '08 Mar', day: 'Sun', cw: 'CW10', holidayName: 'International Women\'s Day', countries: { PL: false, DE: false, CY: false, UA: true, BY: true, RS: false, GE: true, RU: true, AZ: true, KZ: true, AM: true } },
-            { date: '06 Apr', day: 'Mon', cw: 'CW15', holidayName: 'Easter Monday (Catholic)', countries: { PL: true, DE: true, CY: false, UA: false, BY: false, RS: false, GE: false, RU: false, AZ: false, KZ: false, AM: false } },
-            { date: '13 Apr', day: 'Mon', cw: 'CW16', holidayName: 'Easter Monday (Orthodox)', countries: { PL: false, DE: false, CY: true, UA: true, BY: false, RS: true, GE: true, RU: false, AZ: false, KZ: false, AM: false } },
-            { date: '01 May', day: 'Fri', cw: 'CW18', holidayName: 'Labour Day', countries: { PL: true, DE: true, CY: true, UA: true, BY: true, RS: true, GE: false, RU: true, AZ: true, KZ: true, AM: true } },
-            { date: '25 Dec', day: 'Fri', cw: 'CW52', holidayName: 'Christmas Day (Catholic)', countries: { PL: true, DE: true, CY: true, UA: true, BY: true, RS: false, GE: false, RU: false, AZ: false, KZ: false, AM: false } },
-            { date: '31 Dec', day: 'Thu', cw: 'CW53', holidayName: 'New Year\'s Eve', countries: { PL: false, DE: false, CY: false, UA: false, BY: false, RS: false, GE: true, RU: true, AZ: false, KZ: false, AM: true } },
+            { date: '01 Jan 26', day: 'Thu', cw: 'CW01', holidayName: 'New Year’s Day', countries: { PL: true, DE: true, CY: true, UA: true, BY: true, RS: true, GE: true, RU: true, AZ: true, KZ: true, AM: true } },
+            { date: '02 Jan 26', day: 'Fri', cw: 'CW01', holidayName: 'New Year’s Holiday', countries: { PL: false, DE: false, CY: false, UA: false, BY: true, RS: false, GE: true, RU: true, AZ: true, KZ: true, AM: true } },
+            { date: '07 Jan 26', day: 'Wed', cw: 'CW02', holidayName: 'Christmas Day (Orthodox)', countries: { PL: false, DE: false, CY: false, UA: false, BY: true, RS: true, GE: true, RU: true, AZ: false, KZ: true, AM: false } }, // CORRECTED
+            { date: '08 Mar 26', day: 'Sun', cw: 'CW10', holidayName: 'International Women\'s Day', countries: { PL: false, DE: false, CY: false, UA: true, BY: true, RS: false, GE: true, RU: true, AZ: true, KZ: true, AM: true } },
+            { date: '06 Apr 26', day: 'Mon', cw: 'CW15', holidayName: 'Easter Monday (Catholic)', countries: { PL: true, DE: true, CY: false, UA: false, BY: false, RS: false, GE: false, RU: false, AZ: false, KZ: false, AM: false } },
+            { date: '13 Apr 26', day: 'Mon', cw: 'CW16', holidayName: 'Easter Monday (Orthodox)', countries: { PL: false, DE: false, CY: true, UA: true, BY: false, RS: true, GE: true, RU: false, AZ: false, KZ: false, AM: false } },
+            { date: '01 May 26', day: 'Fri', cw: 'CW18', holidayName: 'Labour Day', countries: { PL: true, DE: true, CY: true, UA: true, BY: true, RS: true, GE: false, RU: true, AZ: true, KZ: true, AM: true } },
+            { date: '25 Dec 26', day: 'Fri', cw: 'CW52', holidayName: 'Christmas Day (Catholic)', countries: { PL: true, DE: true, CY: true, UA: true, BY: true, RS: false, GE: false, RU: false, AZ: false, KZ: false, AM: false } },
+            { date: '31 Dec 26', day: 'Thu', cw: 'CW53', holidayName: 'New Year\'s Eve', countries: { PL: false, DE: false, CY: false, UA: false, BY: false, RS: false, GE: true, RU: true, AZ: false, KZ: false, AM: true } },
         ];
         const countryCodes = ['PL', 'DE', 'CY', 'UA', 'BY', 'RS', 'GE', 'RU', 'AZ', 'KZ', 'AM'];
 
